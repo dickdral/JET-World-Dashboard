@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="infocard_container" data-bind="attr: {datacolor: $props.color}">
+    <div  class="infocard_main">
+       <div class="infocard_value"  data-bind="text: $props.value"></div> 
+       <div class="infocard_title"  data-bind="text: $props.title"></div>
+       <div class="infocard_text"   data-bind="text: $props.text"></div>
+    </div>
+    <i data-bind="attr: {class: $props.icon}"></i>
+</div>

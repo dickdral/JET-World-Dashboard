@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19-okt-2016, 20:07:36
+    Author     : dick
+*/
+
+.header_bar {
+    background-color: #267db3;
+    color: white;
+    font-size: 1.8rem;
+    line-height: 60px;
+    padding-left: 80px!important;
+}
+
+/* create space between infocards and charts/tables below */
+.infocard_container {
+    margin-bottom: 50px;
+}
+
+#jwd_main.country #sunburst-container {
+    display: none;
+}
+
+#jwd_main.region #table-container {
+    display: none;
+}
+
+
+.oj-label label {
+    font-weight: bold;
+    line-height: 30px;
+ }
+
+.oj-label {
+    text-align: right;
+}
+
+thead.oj-table-header tr th {
+    background-color: #267db3;
+    color: white;
+}

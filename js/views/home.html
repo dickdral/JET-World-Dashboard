@@ -1,0 +1,136 @@
+<div id="jwd_main" data-bind="attr:{ class: areatype}">    
+<div   class="demo-grid-sizes demo-flex-display">
+  <div class="oj-flex oj-flex-items-pad">
+    <div class="oj-sm-6 oj-flex-item oj-flex">
+
+      <div class="oj-flex-item">
+        <label for="country">Country / Area</label>
+      </div>
+        
+      <div class="oj-flex-item">        
+          <select id="country" data-bind="ojComponent: {component: 'ojSelect',
+                                                        value: country_id,
+                                                        rootAttributes: {style:'max-width:20em'}
+                                                       }">
+          <!-- ko foreach: countries -->
+            <option data-bind="value : value, text: label"></option>
+          <!-- /ko -->
+        </select>
+      </div>
+
+      <div class="oj-flex-item">        
+        <button id= "button"
+            data-bind="click: set_to_world, 
+                       ojComponent: { component: 'ojButton', label: 'World' }">
+        </button>
+      </div>
+        
+    </div>
+      
+    <div class="oj-sm-6 oj-flex-item oj-flex">
+      <div class="oj-flex-item">        
+        <label for="subject">Subject</label>
+      </div>
+      <div class="oj-flex-item">        
+        <select id="subject" data-bind="ojComponent: {component: 'ojSelect',
+                                                    value: subject,
+                                                     rootAttributes: {style:'max-width:20em'}}">
+          <option value="agriculture">Agriculture</option>
+          <option value="energy">Energy</option>
+          <option value="health">Health</option>
+          <option value="mobility">Mobility</option>
+          <option value="population">Population</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+<!-- 
+  INFOCARDS 
+-->
+  <div class="oj-flex oj-flex-items-pad" data-bind="foreach: infocards" style="margin-top:20px;" >
+      <div class="oj-sm-3 oj-flex-item oj-flex">
+        <div class="infocard_container" data-bind="attr: {datacolor: color}">
+          <div  class="infocard_main">
+            <div class="infocard_value"  data-bind="text: value"></div> 
+            <div class="infocard_title"  data-bind="text: title"></div>
+            <div class="infocard_text"   data-bind="text: text"></div>
+          </div>
+          <i data-bind="attr: {class: 'fa '+ fa_icon}"></i>
+        </div>
+      </div>
+      <!--infocard color="{{color}}" icon="{{fa_icon}}" value="{{value}}" title="{{title}}" text="{{text}}"/-->
+  </div>
+        
+  <div class="oj-flex oj-flex-items-pad">
+    <div class="oj-sm-6 oj-flex-item oj-flex">
+
+        <!-- 
+         SUNBURST CONTAINER 
+        -->
+        <div id='sunburst-container' style="width:100%;">
+            <div data-bind="ojComponent: {
+                    component: 'ojSunburst', 
+                    selectionMode: 'single',
+                    selection: sunburstSelectedNode,
+                    animationOnDisplay: 'auto',
+                    sorting: 'on',
+                    sizeLabel: sunburst_text1,
+                    colorLabel: sunburst_text2,
+                    nodeDefaults: {labelDisplay: 'rotated'},
+                    nodes: nodevalues
+                }" 
+                style="width:100%; height:100%;">
+            </div>
+        </div>
+<!--div id='legend-container'>
+  <div data-bind="ojComponent: {
+      component: 'ojLegend',
+      orientation: 'horizontal',
+      textStyle: 'font-size:14px;',
+      sections: legendsections
+      }"
+      style="max-width:485px;width:100%; height:40px;margin:auto;">
+  </div>
+</div-->
+            <div id="table-container">
+               <table id="country_ranking_table" summary="Country Ranking" aria-label="Country Ranking"
+                   data-bind="ojComponent: {component: 'ojTable', 
+                                            data: datasource, 
+                                            ready: compress_table,
+                                            columnsDefault: {sortable: 'enabled'}, 
+                                            columns: country_table_columns,
+                                            selection: { row: 'single' },
+                                            optionChange: tableOptionChange
+                                           }">
+              </table>
+
+            <script type="text/html" id="country_name">
+                <td data-bind="text: country_name">
+                </td>
+            </script>
+            </div>
+
+
+    </div>
+    <div class="oj-sm-6 oj-flex-item oj-flex">
+
+      <div id="map-container" style="width:100%;">
+        <div id='thematicMap' data-bind="ojComponent:{
+          component: 'ojThematicMap',
+          animationOnDisplay: 'auto',
+          animationOnMapChange: 'auto',
+          basemap: map_name,
+          areaLayers: layers,
+          optionChange: mapOptionChange
+          }"
+           style="width:100%">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div> <!-- end jwd_main -->

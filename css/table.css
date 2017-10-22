@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-feb-2017, 14:02:44
+    Author     : dick
+*/
+
+.dc_hide {
+    display: none;
+}
+.dc_current td {
+    background-color: rgb(250, 213, 92);
+}
+.dc_grey {
+    color: lightgrey;
+    background-color: lightgrey;
+}
+.dc_grey img {
+    display: none;
+}

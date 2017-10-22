@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-okt-2016, 11:03:52
+    Author     : dick
+*/
+.infocard_container {
+    background-color: rgb(237, 102, 71);
+    color: white;
+    float: left;
+    height: 120px;
+    padding: 5px;
+    position: relative;
+    width: 100%;
+}
+[datacolor="red"] {
+    background-color: rgb(237, 102, 71);
+}
+[datacolor="blue"] {
+    background-color: rgb(38, 125, 179);
+}
+[datacolor="green"]  {
+    background-color: rgb(104, 193, 130);
+}
+[datacolor="orange"]  {
+    background-color: rgb(250, 213, 92);
+}
+.infocard_main {
+    border-left: 1px solid white;
+    height: 110px;
+    left: 80px;
+    padding: 0 10px;
+    position: absolute;
+    top: 5px;
+}
+.infocard_value {
+    font-size: 1.8em;
+    padding: 10px 0 5px;
+}
+.infocard_container i {
+    font-size: 50px;
+    left: 10px;
+    position: absolute;
+    top: 40px;
+}
+.infocard_text {
+    font-size: 0.8em;
+    line-height: 1.1em;
+}
+@media (max-width: 1200px) {
+.infocard_container {
+    height: 140px;
+}
+.infocard_main {
+    height: 130px;
+}
+}
+@media (max-width: 1000px) {
+.infocard_container {
+    height: 100px;
+    margin-top: 10px;
+    width: 48%;
+}
+.infocard_green {
+    clear: left;
+}
+}
+@media (max-width: 600px) {
+.infocard_container {
+    clear: left;
+    height: 100px;
+    width: 98%;
+}
+.infocard_main {
+    height: 90px;
+}
+}

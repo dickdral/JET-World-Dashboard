@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c) 2017 Detora
+ -->
+<html lang="en-us">
+  <head>
+    <title>Oracle JET World Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="css/images/globe.ico" type="image/x-icon" />
+
+    <!-- This is the main css file for the default Alta theme -->
+    <!-- injector:theme -->
+    <link rel="stylesheet" href="css/libs/oj/v2.1.0/alta/oj-alta-min.css" type="text/css"/>
+    <!-- endinjector -->
+
+    <!-- This is where you would add any app specific styling -->
+    <link href="css/libs/fa/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/infocard.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/override.css" type="text/css"/>
+    <link href="css/jwd.css" rel="stylesheet" type="text/css"/>
+    <link href="css/table.css" rel="stylesheet" type="text/css"/>
+    <link href="css/flags.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- RequireJS configuration file -->
+    <script data-main="js/main" src="js/libs/require/require.js"></script>
+    <script src="js/jwd.js" type="text/javascript"></script>
+    <script src="js/country_info.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+
+    <div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
+      <div id="pageContent" class="oj-web-applayout-page">
+        <!--
+           ** The header pattern uses oj-flex-bar style classes to layout header content.
+           ** Contains three main areas: global branding, global navigation, and application navigation.
+           ** Please see the Oracle JET website under the Cookbook/Application Patterns section for details on how to use this pattern
+        -->
+        <header role="banner" class="oj-web-applayout-header">
+            <div class="header_bar">Oracle JET World Dashboard</div>
+        </header>
+        <!-- This is where your main page content will be loaded -->
+        <div class="oj-web-applayout-max-width oj-web-applayout-content">
+          <div class="oj-flex">
+            <div class="oj-xl-12 oj-lg-12 oj-sm-12 oj-flex-item oj-flex">
+              <div id="mainContent" role="main" class="oj-panel oj-margin oj-flex-item"
+                data-bind="ojModule: router.moduleConfig">
+                <!-- Unlike the Navigation and Complementary sections,
+                  ** this ojModule binding is using "name" instead of "viewName".
+                  ** When the "name" option is specified, ojModule expects that
+                  ** the View and the ViewModel share the same base name.
+                  ** The "viewName" option is used when the View does not have
+                  ** an associated ViewModel or when the ViewModel has a different base name.
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="oj-web-applayout-footer" role="contentinfo">
+          <div class="oj-web-applayout-max-width">
+            <ul>
+              <!-- ko foreach: footerLinks -->
+              <li><a data-bind="text : name, attr : {id: linkId, href : linkTarget}"></a></li>
+              <!-- /ko -->
+            </ul>
+          </div>
+          <div class="oj-text-secondary-color oj-text-sm oj-web-applayout-max-width">
+            Copyright © 2014, 2016 Oracle and/or its affiliates All rights reserved.
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
